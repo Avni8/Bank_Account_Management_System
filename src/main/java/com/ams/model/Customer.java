@@ -34,7 +34,7 @@ public class Customer {
     }
     
     
-    public String getID() {
+    public String getId() {
         return id;
     }
 

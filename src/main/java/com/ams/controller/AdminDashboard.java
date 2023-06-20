@@ -25,11 +25,11 @@ public class AdminDashboard {
         
         switch(choice){
             case(1): System.out.println("\nWelcome to the Customer Registration Page!\n");
-//                     CustomerRegistration.registerCustomer();
+                     CustomerRegistration.registerCustomer();
                      main(args);
                      break;
             case(2): System.out.println("\nWelcome to the Customer Details Page!\n");
-//                     CustomerRegistration.displayCustomerList();
+                     CustomerRegistration.searchCustomerList();
                      MainClass.main(args);
                      break;
             case(3): System.out.println("\nWelcome to the Account Details Page!\n");
