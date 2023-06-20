@@ -16,7 +16,7 @@ public class CustomerRegistration {
     static CustomerRepository customerRepository = new CustomerRepository();
     static Scanner scanner = new Scanner(System.in);
     
-    public static void registerCustomer(){
+    public static void registerCustomer() throws Exception{
         
         System.out.println("Enter the number of customer you want to register: ");
         int Numcustomers = scanner.nextInt();

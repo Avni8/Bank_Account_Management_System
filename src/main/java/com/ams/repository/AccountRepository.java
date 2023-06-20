@@ -4,10 +4,16 @@
  */
 package com.ams.repository;
 
+import com.ams.model.Account;
+import com.ams.model.IModelId;
+
+
 /**
  *
  * @author avni
  */
-public class AccountRepository {
+public class AccountRepository extends CrudRepository<Account>{
+
+
     
 }

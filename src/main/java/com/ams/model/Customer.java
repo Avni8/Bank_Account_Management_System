@@ -8,7 +8,7 @@ package com.ams.model;
  *
  * @author avni
  */
-public class Customer {
+public class Customer implements IModelId {
     
     private String id;
     private String name;
@@ -34,9 +34,11 @@ public class Customer {
     }
     
     
+    @Override
     public String getId() {
         return id;
     }
+    
 
     public String getName() {
         return name;
@@ -68,6 +70,43 @@ public class Customer {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setProduct_type(String product_type) {
+        this.product_type = product_type;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }

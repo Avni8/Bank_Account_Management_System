@@ -2,16 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.ams.repository;
-import java.util.*;
-import com.ams.model.Customer;
+package com.ams.model;
 
 /**
  *
  * @author avni
  */
-public class CustomerRepository extends CrudRepository<Customer>{
+public interface IModelId {
     
-    
+    String getId();
+    void setId(String id );
     
 }

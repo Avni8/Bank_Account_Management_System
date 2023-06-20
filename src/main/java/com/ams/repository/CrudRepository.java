@@ -3,14 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ams.repository;
+import com.ams.model.IModelId;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  *
  * @author avni
  */
-public abstract class CrudRepository <T> {
+public abstract class CrudRepository <T extends IModelId> {
     
     private List<T> items;
     
@@ -25,7 +27,7 @@ public abstract class CrudRepository <T> {
     
     public T read(String id){
         for (T item : items) {
-            if (getId(item).equals(id)) {
+            if (item.getId().equals(id)) {
                 return item;
             }
         }
@@ -35,14 +37,13 @@ public abstract class CrudRepository <T> {
     public void update(T object){
         
     }
-    
+   
     public void delete(String id){
         
     }
-    
-    
-    protected abstract String getId(T object);
-    
+   
+   
+      
 }
     
     
