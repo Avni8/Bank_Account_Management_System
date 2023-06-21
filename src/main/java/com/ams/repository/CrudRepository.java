@@ -14,7 +14,7 @@ import java.util.List;
  */
 public abstract class CrudRepository <T extends IModelId> {
     
-    private List<T> items;
+    protected List<T> items;
     
     public CrudRepository(){
         
