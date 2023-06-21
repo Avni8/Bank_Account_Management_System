@@ -5,7 +5,6 @@
 package com.ams.controller;
 import java.util.*;
 
-import com.ams.repository.CustomerRepository;
 import com.ams.model.Customer;
 
 

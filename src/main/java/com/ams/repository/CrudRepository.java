@@ -48,10 +48,23 @@ public abstract class CrudRepository <T extends IModelId> {
         
     }
    
-    public void delete(String id){
+    public T delete(String id){
+        
+        
+        T foundItem = null;
+        for (T item : items) {
+                if (item.getId().equals(id)) {
+                foundItem = item;
+                break;
+            }
+        }   
+        if (foundItem != null) {
+            items.remove(foundItem);
+            return foundItem;
+        }
+        return null;
         
     }
-   
    
       
 }
