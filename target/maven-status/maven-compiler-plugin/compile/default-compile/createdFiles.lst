@@ -1,2 +1,14 @@
+com/ams/model/IModelId.class
+com/ams/repository/AccountRepository.class
+com/ams/controller/AdminDashboard.class
+com/ams/controller/UpdateAccountDetails.class
+com/ams/controller/CustomerRegistration.class
+com/ams/controller/CreateAccount.class
+com/ams/controller/DeleteCustomer.class
+com/ams/model/Account.class
 com/ams/controller/AdminLogin.class
+com/ams/model/Customer.class
+com/ams/controller/UpdateCustomerDetails.class
+com/ams/repository/CrudRepository.class
+com/ams/repository/CustomerRepository.class
 com/ams/controller/MainClass.class

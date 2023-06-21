@@ -1,2 +1,14 @@
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/model/Account.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/CustomerRegistration.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/repository/CrudRepository.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/DeleteCustomer.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/CreateAccount.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/repository/AccountRepository.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/repository/CustomerRepository.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/model/Customer.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/UpdateCustomerDetails.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/AdminDashboard.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/MainClass.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/AdminLogin.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/model/IModelId.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/UpdateAccountDetails.java

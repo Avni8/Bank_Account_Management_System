@@ -38,6 +38,7 @@ public abstract class CrudRepository <T extends IModelId> {
         
         for(int i=0; i < items.size(); i++){
             T item = items.get(i);
+
             if(item.getId().equals(object.getId())){
                 
                 items.set(i,  object);

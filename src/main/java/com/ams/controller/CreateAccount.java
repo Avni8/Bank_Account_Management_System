@@ -37,11 +37,13 @@ public class CreateAccount extends CustomerRegistration {
             String openedDate = scanner.nextLine();
             System.out.print("Matured Date: ");
             String maturedDate = scanner.nextLine();
+            System.out.println("Enter initial balance: ");
+            Double balance = scanner.nextDouble();
             System.out.print("Interest Rate: ");
-            Integer interestRate = scanner.nextInt();
+            Double interestRate = scanner.nextDouble();
             
             Account account = new Account(accountId, accountNumber, customerId, accountType, interestRate,
-            openedDate, maturedDate, customer);
+            openedDate, maturedDate, balance, customer);
             
             accountRepository.createbyCustomerId(customerId, account);
             
@@ -83,6 +85,7 @@ public class CreateAccount extends CustomerRegistration {
         System.out.println("Account ID: " + account.getId());
         System.out.print("Account Number: " + account.getAcc_no() + "\n");
         System.out.print("Account Type: " + account.getAcc_type()+ "\n");
+        System.out.println("Balance: " + account.getBalance());
         System.out.print("Interest Rate: " + account.getInterest_rate()+ "\n");
         System.out.print("Opened Date: " + account.getOpened_date()+ "\n");
         System.out.print("Matured Date: " + account.getMatured_date()+ "\n");

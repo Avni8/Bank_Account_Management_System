@@ -15,13 +15,14 @@ public class Account implements IModelId {
     private String acc_no;
     private String customerId;
     private String acc_type;
-    private int interest_rate;
+    private double interest_rate;
     private String opened_date;
     private String matured_date;
+    private double balance;
     private Customer customer;
 
-    public Account(String acc_id, String acc_no, String customerId, String acc_type, int interest_rate,
-            String opened_date, String matured_date, Customer customer) {
+    public Account(String acc_id, String acc_no, String customerId, String acc_type, double interest_rate,
+            String opened_date, String matured_date, double balance, Customer customer) {
         this.acc_id = acc_id;
         this.acc_no = acc_no;
         this.customerId = customerId;
@@ -29,7 +30,9 @@ public class Account implements IModelId {
         this.interest_rate = interest_rate;
         this.opened_date = opened_date;
         this.matured_date = matured_date;
+        this.balance = balance;
         this.customer = customer;
+        
     }
     
 
@@ -59,11 +62,11 @@ public class Account implements IModelId {
         this.acc_type = acc_type;
     }
 
-    public int getInterest_rate() {
+    public double getInterest_rate() {
         return interest_rate;
     }
 
-    public void setInterest_rate(int interest_rate) {
+    public void setInterest_rate(double interest_rate) {
         this.interest_rate = interest_rate;
     }
 
@@ -82,6 +85,15 @@ public class Account implements IModelId {
     public void setMatured_date(String matured_date) {
         this.matured_date = matured_date;
     }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    
     
     public Customer getCustomer() {
         return customer;

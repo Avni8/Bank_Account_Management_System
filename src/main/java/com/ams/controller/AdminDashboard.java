@@ -21,8 +21,9 @@ public class AdminDashboard {
         System.out.println("4. Delete customer");
         System.out.println("5. Create account for customer");
         System.out.println("6. View account details");
-        System.out.println("7. Make a monetary deposit");
-        System.out.println("8. Withdraw funds\n");
+        System.out.println("7. Update account details");
+        System.out.println("8. Make a monetary deposit");
+        System.out.println("9. Withdraw funds\n");
         System.out.println("Enter your choice:");
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
@@ -45,7 +46,7 @@ public class AdminDashboard {
                      DeleteCustomer.main(args);
                      main(args);
                      break;
-            case(5): System.out.println("\nWelcome to the Customer Acccount Creation Page!\n");
+            case(5): System.out.println("\nWelcome to the Customer Account Creation Page!\n");
                      CreateAccount.createAccount();
                      main(args);
                      break;        
@@ -53,10 +54,13 @@ public class AdminDashboard {
                      CreateAccount.searchAccountList();
                      main(args);
                      break;
-            case(7): System.out.println("\nWelcome to the Monetary Deposit Page!\n");
+            case(7): System.out.println("\n Welcome to the Account Details Update Page!\n");
+                     UpdateAccountDetails.main(args);
+                     main(args);        
+            case(8): System.out.println("\nWelcome to the Monetary Deposit Page!\n");
                      main(args);
                      break;
-            case(8): System.out.println("\nWelcome to the Cash Withdrawal Page\n");
+            case(9): System.out.println("\nWelcome to the Cash Withdrawal Page\n");
                      main(args);
                      break;
             default: System.out.println("\nInvalid Choice! Try Again.\n");
