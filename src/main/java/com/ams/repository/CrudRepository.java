@@ -65,9 +65,7 @@ public abstract class CrudRepository <T extends IModelId> {
         }
         return null;
         
-    }
-   
-      
+    } 
 }
     
     

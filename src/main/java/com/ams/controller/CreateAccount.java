@@ -76,7 +76,7 @@ public class CreateAccount extends CustomerRegistration {
         }
         
         else{
-            System.out.println("Customer with id " + customerId + "not found!");
+            System.out.println("Account of Customer with id " + customerId + " not found!");
         }   
         
     }
