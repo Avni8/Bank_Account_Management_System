@@ -12,13 +12,15 @@ import java.util.*;
 public class AdminDashboard {
     
        public static void main(String[] args) throws Exception {
+           
         System.out.println("\n****Admin DashBoard****\n");
         System.out.println("Please choose one of the folllowing actions\n");
         System.out.println("1. Register a new customer");
         System.out.println("2. View customer details");
-        System.out.println("3. View account details");
-        System.out.println("4. Make a monetary deposit");
-        System.out.println("5. Withdraw funds\n");
+        System.out.println("3. Update customer details");
+        System.out.println("4. View account details");
+        System.out.println("5. Make a monetary deposit");
+        System.out.println("6. Withdraw funds\n");
         System.out.println("Enter your choice:");
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
@@ -30,15 +32,20 @@ public class AdminDashboard {
                      break;
             case(2): System.out.println("\nWelcome to the Customer Details Page!\n");
                      CustomerRegistration.searchCustomerList();
-                     MainClass.main(args);
-                     break;
-            case(3): System.out.println("\nWelcome to the Account Details Page!\n");
                      main(args);
                      break;
-            case(4): System.out.println("\nWelcome to the Monetary Deposit Page!\n");
+            case(3): System.out.println("\nWelcome to the Customer Details Update Page!\n");
+                     UpdateCustomerDetails.main(args);
+                     main(args);
+//                     MainClass.main(args);
+                     break;
+            case(4): System.out.println("\nWelcome to the Account Details Page!\n");
                      main(args);
                      break;
-            case(5): System.out.println("\nWelcome to the Cash Withdrawal Page\n");
+            case(5): System.out.println("\nWelcome to the Monetary Deposit Page!\n");
+                     main(args);
+                     break;
+            case(6): System.out.println("\nWelcome to the Cash Withdrawal Page\n");
                      main(args);
                      break;
             default: System.out.println("\nInvalid Choice! Try Again.\n");
