@@ -1,5 +1,7 @@
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/repository/JDBCRepository.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/model/Account.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/CustomerRegistration.java
+/home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/DeleteAccount.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/repository/CrudRepository.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/DeleteCustomer.java
 /home/avni/NetBeansProjects/Project_AMS/src/main/java/com/ams/controller/CreateAccount.java

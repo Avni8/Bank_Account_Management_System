@@ -3,16 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ams.repository;
-import java.sql.*;
-import java.util.*;
-import com.ams.model.Customer;
+import com.ams.model.Account;
 
 /**
  *
  * @author avni
  */
-public class CustomerRepository extends CrudRepository<Customer>{
+public class JDBCAccountRepository extends JDBCRepository<Account> {
     
+    public JDBCAccountRepository(String url, String username, String password) {
+        
+        super(url, username, password);
+        
+    }
     
     
 }
