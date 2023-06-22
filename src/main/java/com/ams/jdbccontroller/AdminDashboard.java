@@ -42,8 +42,8 @@ public class AdminDashboard {
                      UpdateCustomer.main(args);
                      break;
             case(4): System.out.println("\nWelcome to the Customer Removal Page!\n");
+                     DeleteCustomer.main(args);
                      
-                     main(args);
                      break;
             case(5): System.out.println("\nWelcome to the Customer Account Creation Page!\n");
                     

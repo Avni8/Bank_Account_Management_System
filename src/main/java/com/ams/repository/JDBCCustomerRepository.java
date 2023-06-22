@@ -117,27 +117,29 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
 
    }
     
-//   public void deleteCustomer(String id) {
-//    try {
-//        Connection connection = getConnection();
-//
-////        String query = "DELETE FROM " + customer + " WHERE id=?";
-////        PreparedStatement statement = connection.prepareStatement(query);
-////        statement.setString(1, id);
-////
-////        int rowsDeleted = statement.executeUpdate();
-////
-////        statement.close();
-////        connection.close();
-//
-//        if (rowsDeleted > 0) {
-//            System.out.println("Customer deleted successfully!");
-//        } else {
-//            System.out.println("Failed to delete customer!");
-//        }
-//    } catch (SQLException e) {
-//        e.printStackTrace();
-//    }
+   public void deleteCustomer(String id) {
+    try {
+        Connection connection = getConnection();
+
+        String query = "DELETE FROM customer WHERE id=?";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, id);
+
+        int rowsDeleted = statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+
+        if (rowsDeleted > 0) {
+            System.out.println("Customer deleted successfully!");
+        } else {
+            System.out.println("Failed to delete customer!");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    
+   }
 }
 
     
