@@ -39,9 +39,7 @@ public class AdminDashboard {
                      CustomerRegistration.displayCustomerDetails();
                      break;
             case(3): System.out.println("\nWelcome to the Customer Details Update Page!\n");
-                     
-                     main(args);
-
+                     UpdateCustomer.main(args);
                      break;
             case(4): System.out.println("\nWelcome to the Customer Removal Page!\n");
                      
