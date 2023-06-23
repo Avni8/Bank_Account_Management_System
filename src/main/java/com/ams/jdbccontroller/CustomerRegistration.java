@@ -15,14 +15,14 @@ public class CustomerRegistration {
     public static void registerCustomer() throws Exception{
         
         Scanner scanner = new Scanner(System.in);
-        List<Customer> customers = new ArrayList<>();
+//        List<Customer> customers = new ArrayList<>();
         
-        System.out.print("Enter the number of customers to register: ");
-        int numCustomers = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+//        System.out.print("Enter the number of customers to register: ");
+//        int numCustomers = scanner.nextInt();
+//        scanner.nextLine(); // Consume the newline character
         
-        for (int i = 0; i < numCustomers; i++) {
-            System.out.println("\nEnter details for customer #" + (i + 1));
+//        for (int i = 0; i < numCustomers; i++) {
+            System.out.println("\nEnter details for customer");
             System.out.print("ID: ");
             String id = scanner.nextLine();
 
@@ -54,19 +54,19 @@ public class CustomerRegistration {
             Customer customer = new Customer(id, name, address, contact, dob, email, productType, username, password);
 
             // Add the customer to the list
-            customers.add(customer);
-        }
+//            customers.add(customer);
+//        }
 
         // Create an instance of CustomerRepository
         JDBCCustomerRepository customerRepository = new JDBCCustomerRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
 
         // Insert each customer into the database
-        for (Customer customer : customers) {
+//        for (Customer customer : customers) {
             customerRepository.createCustomer(customer);
-        }
+//        }
 
         scanner.close();
-        System.out.println("Customers registered successfully!");
+        System.out.println("Customer registered successfully!");
         
     }
     
