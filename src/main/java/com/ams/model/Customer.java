@@ -8,7 +8,7 @@ package com.ams.model;
  *
  * @author avni
  */
-public class Customer implements IModelId {
+public class Customer implements IModelId, ITableName {
     
     private String id;
     private String name;

@@ -33,36 +33,37 @@ public class AdminDashboard {
         switch(choice){
             case(1): System.out.println("\nWelcome to the Customer Registration Page!\n");
                      CustomerRegistration.registerCustomer();      
-//                     main(args);
                      break;
+                     
             case(2): System.out.println("\nWelcome to the Customer Details Page!\n");
                      CustomerRegistration.displayCustomerDetails();
                      break;
+                     
             case(3): System.out.println("\nWelcome to the Customer Details Update Page!\n");
                      UpdateCustomer.main(args);
                      break;
+                     
             case(4): System.out.println("\nWelcome to the Customer Removal Page!\n");
                      DeleteCustomer.main(args);
-                     
                      break;
+                     
             case(5): System.out.println("\nWelcome to the Customer Account Creation Page!\n");
-                    
-                     main(args);
+                     CreateAccount.registerAccount();   
                      break;        
+                     
             case(6): System.out.println("\nWelcome to the Account Details Page!\n");
-                    
-                     main(args);
+                     CreateAccount.displayAccountDetails();
                      break;
+                     
             case(7): System.out.println("\n Welcome to the Account Details Update Page!\n");
-                     
-                     main(args); 
+                     UpdateAccount.main(args);
                      break;
+                     
             case(8): System.out.println("\n Welcome to the Account Deletion Page!\n"); 
-                     
-                     main(args);
+                     DeleteAccount.main(args);
                      break;
+                     
             case(9): System.out.println("\nWelcome to the Monetary Deposit Page!\n");
-                     main(args);
                      break;
                      
             case(10): System.out.println("\nWelcome to the Cash Withdrawal Page\n");
@@ -70,7 +71,7 @@ public class AdminDashboard {
                      break;
                      
             default: System.out.println("\nInvalid Choice! Try Again.\n");
-//                     main(args);
+
            
         }     
         
