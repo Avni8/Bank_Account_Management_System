@@ -7,6 +7,7 @@ package com.ams.repository;
 import java.sql.*;
 import java.sql.SQLException;
 import com.ams.model.Customer;
+import java.util.*;
 
 /**
  *
@@ -14,15 +15,16 @@ import com.ams.model.Customer;
  */
 public class JDBCCustomerRepository extends JDBCRepository<Customer>{
     
-    public JDBCCustomerRepository(String url, String username, String password) {
-        
-        super(url, username, password);
-        
-    }
+//    public JDBCCustomerRepository(String url, String username, String password) {
+//        
+//        super(url, username, password);
+//        
+//    }
+    Connection connection = getConnection();
     
     public void createCustomer(Customer customer) {
         try {
-            Connection connection = getConnection();
+//            Connection connection = getConnection();
 
             String query = "INSERT INTO customer (id, name, address, contact, dob, email, product_type, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -49,7 +51,7 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
     
     public Customer readCustomer(String id) {
         try {
-            Connection connection = getConnection();
+//            Connection connection = getConnection();
 
             String query = "SELECT * FROM customer WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -74,7 +76,7 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
 
             resultSet.close();
             statement.close();
-            connection.close();
+//            connection.close();
 
             return customer;
         } 
@@ -87,7 +89,8 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
     
     public void updateCustomer(Customer customer) {
     try {
-        Connection connection = getConnection();
+        
+//        Connection connection = getConnection();
 
         String query = "UPDATE customer  SET name=?, address=?, contact=?, dob=?, email=?, product_type=?, username=?, password=? WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(query);
@@ -102,24 +105,25 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
         statement.setString(9, customer.getId());
 
         int rowsUpdated = statement.executeUpdate();
-
-        statement.close();
-        connection.close();
+        
+//        statement.close();
+//        connection.close();
 
         if (rowsUpdated > 0) {
             System.out.println("Customer updated successfully!");
         } else {
             System.out.println("Failed to update customer!");
         }
+        
+        
     } catch (SQLException e) {
         e.printStackTrace();
     }
-
    }
     
    public void deleteCustomer(String id) {
     try {
-        Connection connection = getConnection();
+//        Connection connection = getConnection();
 
         String query = "DELETE FROM customer WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(query);
@@ -140,7 +144,48 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
     }
     
    }
-}
+   
+   public List<Customer> getAllCustomers(){
+       
+       List<Customer> customers = new ArrayList<>();
+       
+       try{
+           
+//           Connection connection = getConnection();
+           String sql = "SELECT * FROM customer";
+           PreparedStatement statement = connection.prepareStatement(sql);
+           ResultSet resultSet = statement.executeQuery();
+
+            // Iterate over the result set and create Customer objects
+            while (resultSet.next()) {
+                String id = resultSet.getString("id");
+                String name = resultSet.getString("name");
+                String address = resultSet.getString("address");
+                String contact = resultSet.getString("contact");
+                String dob = resultSet.getString("dob");
+                String email = resultSet.getString("email");
+                String productType = resultSet.getString("product_type");
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
+
+                Customer customer = new Customer(id, name, address, contact, dob, email, productType, username, password);
+                customers.add(customer);
+            }
+
+            // Close result set, statement, and connection
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return customers;
+                               
+       }    
+   }
+   
+
 
     
     

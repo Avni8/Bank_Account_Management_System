@@ -12,32 +12,46 @@ import com.ams.model.IModelId;
  */
 public abstract class JDBCRepository <T extends IModelId> extends CrudRepository<T> {
     
-    private Connection connection;
-    private String url = "jdbc:mysql://localhost:3306/bank_account_management";
-    private String username = "root";
-    private String password = "avni";
+    private static Connection connection;
+    private static String url = "jdbc:mysql://localhost:3306/bank_account_management";
+    private static String username = "root";
+    private static String password = "avni";
     
-    public JDBCRepository(String url, String username, String password){
-        
-         try {
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(url, username, password);    
-        } 
-        
-         catch (ClassNotFoundException | SQLException e) {
-             
-            e.printStackTrace();
+//    public JDBCRepository(String url, String username, String password){
+//        
+//         try {
+//            
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            connection = DriverManager.getConnection(url, username, password);    
+//        } 
+//        
+//         catch (ClassNotFoundException | SQLException e) {
+//             
+//            e.printStackTrace();
+//        }
+//    }  
+//    
+//    protected Connection getConnection() throws SQLException {
+//        return DriverManager.getConnection(url, username, password);
+//    }
+//    
+    
+    
+    public static Connection getConnection() {
+        if (connection == null) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection(url, username, password);
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+            }
         }
-    }  
-    
-    protected Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(url, username, password);
+        return connection;
     }
-    
-    
-    
+
 }
+    
+
 
 
     

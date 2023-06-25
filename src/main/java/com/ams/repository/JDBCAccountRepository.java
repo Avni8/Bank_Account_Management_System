@@ -5,6 +5,7 @@
 package com.ams.repository;
 import java.sql.*;
 import java.sql.SQLException;
+import java.util.*;
 import com.ams.model.Customer;
 import com.ams.model.Account;
 
@@ -13,17 +14,19 @@ import com.ams.model.Account;
  * @author avni
  */
 public class JDBCAccountRepository extends JDBCRepository<Account> {
+//    
+//    public JDBCAccountRepository(String url, String username, String password) {
+//        
+//        super(url, username, password);
+//        
+//    }
     
-    public JDBCAccountRepository(String url, String username, String password) {
-        
-        super(url, username, password);
-        
-    }
+    Connection connection = getConnection();
     
     public void createAccount(Account account){
         
         try {
-            Connection connection = getConnection();
+//            Connection connection = getConnection();
             String query = " INSERT INTO account (acc_id, acc_no, customerId, acc_type, interest_rate,"
                     + "opened_date, matured_date, balance)VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -57,7 +60,7 @@ public class JDBCAccountRepository extends JDBCRepository<Account> {
     
     public Account readAccountByCustomerId(String customerId) {
     try {
-        Connection connection = getConnection();
+//        Connection connection = getConnection();
 
         String query = "SELECT * FROM account WHERE customerId = ?";
         PreparedStatement statement = connection.prepareStatement(query);
@@ -96,7 +99,7 @@ public class JDBCAccountRepository extends JDBCRepository<Account> {
     
     public void updateAccountByCustomerId(String customerId, Account account) {
     try {
-        Connection connection = getConnection();
+//        Connection connection = getConnection();
         String query = "UPDATE account SET acc_no=?, acc_type=?, interest_rate=?, opened_date=?, matured_date=?, balance=? WHERE customerId=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, account.getAcc_no());
@@ -120,7 +123,7 @@ public class JDBCAccountRepository extends JDBCRepository<Account> {
     
     public void deleteAccountByCustomerId(String customerId){
         try{
-            Connection connection = getConnection();
+//            Connection connection = getConnection();
             
             String query = "DELETE FROM account WHERE customerId = ?";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -143,13 +146,51 @@ public class JDBCAccountRepository extends JDBCRepository<Account> {
     }
 
 
-        
-   
 
+public List<Account> getAllAccounts(){
+       
+       List<Account> accounts = new ArrayList<>();
+       
+       try{
+           
+//           Connection connection = getConnection();
+           String sql = "SELECT * FROM account";
+           PreparedStatement statement = connection.prepareStatement(sql);
+           ResultSet resultSet = statement.executeQuery();
+
+            
+            while (resultSet.next()) {
+                
+                String acc_id = resultSet.getString("acc_id");
+                String acc_no = resultSet.getString("acc_no");
+                String customerId = resultSet.getString("customerId");
+                String acc_type = resultSet.getString("acc_type");
+                double interest_rate = resultSet.getDouble("interest_rate");
+                String opened_date = resultSet.getString("opened_date");
+                String matured_date = resultSet.getString("matured_date");
+                double balance = resultSet.getDouble("balance");
+
+                // Create an Account object and add it to the list
+                Account account = new Account(acc_id, acc_no, customerId, acc_type, interest_rate,
+                        opened_date, matured_date, balance, null);
+                accounts.add(account);
+                
+            } 
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return accounts;
+                               
+       }    
+   }
+
+   
     
     
     
     
-    
-    
-}
+

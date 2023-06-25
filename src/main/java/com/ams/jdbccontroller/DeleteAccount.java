@@ -14,9 +14,9 @@ import java.util.*;
  */
 public class DeleteAccount {
     
-    public static void main(String[] args) {
+    public static void delete() {
         
-        JDBCAccountRepository accountRepository = new JDBCAccountRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCAccountRepository accountRepository = new JDBCAccountRepository();
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Enter the customer ID: ");

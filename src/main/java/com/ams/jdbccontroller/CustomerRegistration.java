@@ -12,16 +12,9 @@ import com.ams.repository.JDBCCustomerRepository;
  */
 public class CustomerRegistration {
     
-    public static void registerCustomer() throws Exception{
+    public static void registerCustomer() {
         
         Scanner scanner = new Scanner(System.in);
-//        List<Customer> customers = new ArrayList<>();
-        
-//        System.out.print("Enter the number of customers to register: ");
-//        int numCustomers = scanner.nextInt();
-//        scanner.nextLine(); // Consume the newline character
-        
-//        for (int i = 0; i < numCustomers; i++) {
             System.out.println("\nEnter details for customer");
             System.out.print("ID: ");
             String id = scanner.nextLine();
@@ -50,29 +43,22 @@ public class CustomerRegistration {
             System.out.print("Password: ");
             String password = scanner.nextLine();
 
-            // Create a Customer object with user-provided values
+            
             Customer customer = new Customer(id, name, address, contact, dob, email, productType, username, password);
 
-            // Add the customer to the list
-//            customers.add(customer);
-//        }
+    
+            JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
 
-        // Create an instance of CustomerRepository
-        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
-
-        // Insert each customer into the database
-//        for (Customer customer : customers) {
             customerRepository.createCustomer(customer);
-//        }
 
         scanner.close();
         System.out.println("Customer registered successfully!");
         
     }
     
-    public static void displayCustomerDetails(){
+    public static void displayCustomerDetails() {
         
-        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
 
         Scanner scanner = new Scanner(System.in);
         
@@ -99,9 +85,32 @@ public class CustomerRegistration {
             System.out.println("Customer not found!");
         }
 
-        scanner.close();    
-    }     
+        scanner.close(); 
+        
+    } 
+    
+    public static void DisplayForAll(){
+        
+        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
+        List<Customer> customers = customerRepository.getAllCustomers();
+
+        for (Customer customer : customers) {
+            
+            System.out.println("Customer ID: " + customer.getId());
+            System.out.println("Name: " + customer.getName());
+            System.out.println("Address: " + customer.getAddress());
+            System.out.println("Contact: " + customer.getContact());
+            System.out.println("DOB: " + customer.getDob());
+            System.out.println("Email: " + customer.getEmail());
+            System.out.println("Product Type: " + customer.getProductType());
+            System.out.println("Username: " + customer.getUsername());
+            System.out.println("Password: " + customer.getPassword());
+            System.out.println();
+        }
+        
     }
+    
+}
     
     
     

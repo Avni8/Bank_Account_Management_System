@@ -111,9 +111,6 @@ public class Account implements IModelId {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
-    
-
-    
 }
 
     

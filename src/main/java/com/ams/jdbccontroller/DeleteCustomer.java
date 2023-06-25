@@ -13,9 +13,9 @@ import com.ams.repository.JDBCCustomerRepository;
  */
 public class DeleteCustomer {
     
-    public static void main(String[] args) {
+    public static void delete() {
         
-        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Enter the customer ID: ");

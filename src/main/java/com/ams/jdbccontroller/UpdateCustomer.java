@@ -13,10 +13,10 @@ import com.ams.repository.JDBCCustomerRepository;
  */
 public class UpdateCustomer {
 
-    public static void main(String[] args) throws Exception
+    public static void update() 
     {
         
-        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
 
        
         Scanner scanner = new Scanner(System.in);

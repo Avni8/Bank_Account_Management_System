@@ -22,7 +22,7 @@ public class MainClass {
         
         if(ans.equals("admin")){
             System.out.println("\nWelcome to the Admin Login Page!\n");
-            com.ams.controller.AdminLogin.main(args);
+            com.ams.jdbccontroller.AdminLogin.main(args);
         
         }
         else if (ans.equals("customer")){

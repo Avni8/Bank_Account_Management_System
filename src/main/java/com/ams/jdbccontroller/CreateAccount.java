@@ -8,6 +8,7 @@ import com.ams.model.Account;
 import com.ams.model.Customer;
 import com.ams.repository.JDBCAccountRepository;
 import com.ams.repository.JDBCCustomerRepository;
+import com.ams.repository.JDBCRepository;
 
 /**
 /**
@@ -25,7 +26,8 @@ public class CreateAccount {
         System.out.print("Enter customer ID of the customer whose account you want to create ");
         String customerId = scanner.nextLine();
         
-        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+
+        JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
         Customer customer = customerRepository.readCustomer(customerId);
         
         if(customer != null){
@@ -55,7 +57,7 @@ public class CreateAccount {
         Account account = new Account(accountId, accountNumber, customerId, accountType, interestRate,
                 openedDate, maturedDate, balance, customer);
         
-        JDBCAccountRepository accountRepository = new JDBCAccountRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCAccountRepository accountRepository = new JDBCAccountRepository();
         // Call the createAccount method with the Account object
         accountRepository.createAccount(account);
 
@@ -74,7 +76,7 @@ public class CreateAccount {
         System.out.print("Enter the customer ID: ");
         String customerId = scanner.nextLine();
 
-        JDBCAccountRepository accountRepository = new JDBCAccountRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCAccountRepository accountRepository = new JDBCAccountRepository();
         Account account = accountRepository.readAccountByCustomerId(customerId);
 
         
@@ -101,6 +103,27 @@ public class CreateAccount {
 
       
         scanner.close();
+        
+    }
+    
+    
+    public static void DisplayForAll(){
+        
+        JDBCAccountRepository accountRepository = new JDBCAccountRepository();
+        List<Account> accounts = accountRepository.getAllAccounts();
+
+        for (Account account : accounts) {
+            System.out.println("Account ID: " + account.getId());
+            System.out.println("Account Number: " + account.getAcc_no());
+            System.out.println("Customer ID: " + account.getCustomerId());
+            System.out.println("Account Type: " + account.getAcc_type());
+            System.out.println("Interest Rate: " + account.getInterest_rate());
+            System.out.println("Opened Date: " + account.getOpened_date());
+            System.out.println("Matured Date: " + account.getMatured_date());
+            System.out.println("Balance: " + account.getBalance());
+            
+            System.out.println();
+        }
         
     }
     

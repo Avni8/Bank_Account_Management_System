@@ -13,9 +13,9 @@ import java.util.*;
  */
 public class UpdateAccount {
     
-    public static void main(String[] args) {
+    public static void update() {
        
-        JDBCAccountRepository accountRepository = new JDBCAccountRepository("jdbc:mysql://localhost:3306/bank_account_management", "root", "avni");
+        JDBCAccountRepository accountRepository = new JDBCAccountRepository();
 
         // Create a Scanner object to read user input
         Scanner scanner = new Scanner(System.in);
