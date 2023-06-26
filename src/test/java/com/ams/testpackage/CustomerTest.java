@@ -88,28 +88,28 @@ public class CustomerTest {
     @Test
     public void testUpdateCustomer(){
         
-        testCustomer.setName("Harry");
-        testCustomer.setAddress("USA");
-        testCustomer.setContact("9851094818");
-        testCustomer.setDob("2000-10-09");
-        testCustomer.setEmail("harry@gmail.com");
-        testCustomer.setProduct_type("Fixed Deposits");
-        testCustomer.setUsername("9851094818");
-        testCustomer.setPassword("harry");
+        testCustomer1.setName("Harry");
+        testCustomer1.setAddress("USA");
+        testCustomer1.setContact("9851094818");
+        testCustomer1.setDob("2000-10-09");
+        testCustomer1.setEmail("harry@gmail.com");
+        testCustomer1.setProduct_type("Fixed Deposits");
+        testCustomer1.setUsername("9851094818");
+        testCustomer1.setPassword("harry");
 
-        customerRepository.updateCustomer(testCustomer);
+        customerRepository.updateCustomer(testCustomer1);
 
-        Customer updatedCustomer = customerRepository.readCustomer(testCustomer.getId());
+        Customer updatedCustomer = customerRepository.readCustomer(testCustomer1.getId());
         
         assertNotNull(updatedCustomer);
-        assertEquals(testCustomer.getName(), updatedCustomer.getName());
-        assertEquals(testCustomer.getAddress(), updatedCustomer.getAddress());
-        assertEquals(testCustomer.getContact(), updatedCustomer.getContact());
-        assertEquals(testCustomer.getDob(), updatedCustomer.getDob());
-        assertEquals(testCustomer.getEmail(), updatedCustomer.getEmail());
-        assertEquals(testCustomer.getProductType(), updatedCustomer.getProductType());
-        assertEquals(testCustomer.getUsername(), updatedCustomer.getUsername());
-        assertEquals(testCustomer.getPassword(), updatedCustomer.getPassword());
+        assertEquals(testCustomer1.getName(), updatedCustomer.getName());
+        assertEquals(testCustomer1.getAddress(), updatedCustomer.getAddress());
+        assertEquals(testCustomer1.getContact(), updatedCustomer.getContact());
+        assertEquals(testCustomer1.getDob(), updatedCustomer.getDob());
+        assertEquals(testCustomer1.getEmail(), updatedCustomer.getEmail());
+        assertEquals(testCustomer1.getProductType(), updatedCustomer.getProductType());
+        assertEquals(testCustomer1.getUsername(), updatedCustomer.getUsername());
+        assertEquals(testCustomer1.getPassword(), updatedCustomer.getPassword());
         
     }
     
