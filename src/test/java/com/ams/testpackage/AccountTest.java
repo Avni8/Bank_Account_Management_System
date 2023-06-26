@@ -29,10 +29,10 @@ public class AccountTest {
         
         accountRepository = new JDBCAccountRepository();
         
-        testAccount = new Account("8", "2400000123456789", "8", "Nari Bachat Saving", 13, 
+        testAccount = new Account("8", "2400000123456789", "26", "Nari Bachat Saving", 13, 
                 "1999-02-02", "2020-02-02", 3434433, null);
         
-        testAccount1 = new Account("9", "2400000123454592", "9", "Nari Bachat Saving", 13, 
+        testAccount1 = new Account("9", "2400000123454592", "21", "Nari Bachat Saving", 13, 
                 "1999-02-02", "2020-02-02", 10000000, null);
         
     }
@@ -53,10 +53,11 @@ public class AccountTest {
         assertEquals(testAccount.getInterest_rate(), createdAccount.getInterest_rate(), 0.01);
         assertEquals(testAccount.getOpened_date(), createdAccount.getOpened_date());
         assertEquals(testAccount.getMatured_date(), createdAccount.getMatured_date());
-        assertEquals(testAccount.getBalance(), createdAccount.getBalance(), 0.01);
-        
+        assertEquals(testAccount.getBalance(), createdAccount.getBalance(), 0.01);   
         
     }
+    
+    
     
     
     
