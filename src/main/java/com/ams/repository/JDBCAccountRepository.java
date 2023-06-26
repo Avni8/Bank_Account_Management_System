@@ -48,7 +48,7 @@ public class JDBCAccountRepository extends JDBCRepository<Account> {
             }
             
             
-            connection.close();
+//            connection.close();
         } 
         catch (SQLException e) {
             e.printStackTrace();
@@ -85,7 +85,7 @@ public class JDBCAccountRepository extends JDBCRepository<Account> {
 
         resultSet.close();
         statement.close();
-        connection.close();
+//        connection.close();
 
         return account;
     } 
@@ -178,7 +178,7 @@ public List<Account> getAllAccounts(){
             } 
             resultSet.close();
             statement.close();
-            connection.close();
+//            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

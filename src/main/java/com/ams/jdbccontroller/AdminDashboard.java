@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class AdminDashboard {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws NoSuchElementException {
 
 //        Boolean exit = Boolean.FALSE;
 //        while (!exit) {
@@ -34,11 +34,13 @@ public class AdminDashboard {
             System.out.print("Enter your choice: ");
             Scanner sc = new Scanner(System.in);
             int choice = sc.nextInt();
+            sc.nextLine();
 //            exit = choice == 0;
 
             switch (choice) {
                 case 0:
                     System.out.println("Exiting the program. Goodbye!");
+//                    exit = choice == 0;
                     break;
                 case 1:
 
@@ -127,10 +129,13 @@ public class AdminDashboard {
                     break;
 
             }
-            System.out.println(); // Print an empty line for separation
-            sc.close();
+//            System.out.println(); // Print an empty line for separation
+//            sc.close();
+            
+            
         }
-
     }
 
 //}
+
+

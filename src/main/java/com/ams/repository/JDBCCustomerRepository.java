@@ -41,7 +41,7 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
             statement.executeUpdate();
 
             statement.close();
-            connection.close();
+//            connection.close();
         } 
         catch (SQLException e) {
             e.printStackTrace();
@@ -175,7 +175,7 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
             // Close result set, statement, and connection
             resultSet.close();
             statement.close();
-            connection.close();
+//            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

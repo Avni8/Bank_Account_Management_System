@@ -36,18 +36,22 @@ public class CreateAccount {
 
         System.out.print("Enter account number: ");
         String accountNumber = scanner.nextLine();
+        accountNumber = Validation.validateAccountNumber(accountNumber);
 
         System.out.print("Enter account type: ");
         String accountType = scanner.nextLine();
+        accountType = Validation.validateAccountType(accountType);
 
         System.out.print("Enter interest rate: ");
         double interestRate = scanner.nextDouble();
 
-        System.out.print("Enter opened date: ");
+        System.out.print("Enter opened date (YYYY-MM-DD): ");
         String openedDate = scanner.next();
+        openedDate = Validation.validateDate(openedDate, "Opened Date");
 
-        System.out.print("Enter matured date: ");
+        System.out.print("Enter matured date (YYYY-MM-DD): ");
         String maturedDate = sc.next();
+        maturedDate = Validation.validateDate(maturedDate, "Mature Date");
 
         System.out.print("Enter account balance: ");
         double balance = scn.nextDouble();
@@ -96,7 +100,7 @@ public class CreateAccount {
             System.out.println("Interest Rate: " + interestRate);
             System.out.println("Opened Date: " + openedDate);
             System.out.println("Matured Date: " + maturedDate);
-            System.out.println("Balance: " + balance);
+            System.out.println("Balance: Rs. " + balance);
         } else {
             System.out.println("Account not found for the provided customer ID.");
         }
@@ -120,7 +124,7 @@ public class CreateAccount {
             System.out.println("Interest Rate: " + account.getInterest_rate());
             System.out.println("Opened Date: " + account.getOpened_date());
             System.out.println("Matured Date: " + account.getMatured_date());
-            System.out.println("Balance: " + account.getBalance());
+            System.out.println("Balance: Rs. " + account.getBalance());
             
             System.out.println();
         }

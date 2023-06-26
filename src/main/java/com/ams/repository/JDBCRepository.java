@@ -17,26 +17,6 @@ public abstract class JDBCRepository <T extends IModelId> extends CrudRepository
     private static String username = "root";
     private static String password = "avni";
     
-//    public JDBCRepository(String url, String username, String password){
-//        
-//         try {
-//            
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            connection = DriverManager.getConnection(url, username, password);    
-//        } 
-//        
-//         catch (ClassNotFoundException | SQLException e) {
-//             
-//            e.printStackTrace();
-//        }
-//    }  
-//    
-//    protected Connection getConnection() throws SQLException {
-//        return DriverManager.getConnection(url, username, password);
-//    }
-//    
-    
-    
     public static Connection getConnection() {
         if (connection == null) {
             try {

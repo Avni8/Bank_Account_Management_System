@@ -29,19 +29,23 @@ public class UpdateAccount {
 
         System.out.print("Enter the updated account number: ");
         String accountNumber = scanner.nextLine();
+        accountNumber = Validation.validateAccountNumber(accountNumber);
 
         System.out.print("Enter the updated account type: ");
         String accountType = scanner.nextLine();
+        accountType = Validation.validateAccountType(accountType);
 
         System.out.print("Enter the updated interest rate: ");
         double interestRate = scanner.nextDouble();
         scanner.nextLine(); // Consume the newline character
 
-        System.out.print("Enter the updated opened date: ");
+        System.out.print("Enter the updated opened date (YYYY-MM-DD): ");
         String openedDate = scanner.nextLine();
+        openedDate = Validation.validateDate(openedDate, "Opened Date");
 
-        System.out.print("Enter the updated matured date: ");
+        System.out.print("Enter the updated matured date (YYYY-MM-DD): ");
         String maturedDate = scanner.nextLine();
+        maturedDate = Validation.validateDate(maturedDate, "Mature Date");
 
         System.out.print("Enter the updated balance: ");
         double balance = scanner.nextDouble();

@@ -21,27 +21,35 @@ public class CustomerRegistration {
 
             System.out.print("Name: ");
             String name = scanner.nextLine();
+            name = Validation.validateNameandAdd(name, "Name");
 
             System.out.print("Address: ");
             String address = scanner.nextLine();
+            address = Validation.validateNameandAdd(address, "Address");
 
             System.out.print("Contact: ");
             String contact = scanner.nextLine();
+            contact = Validation.validateContact(contact);
 
-            System.out.print("Date of Birth (DOB): ");
+            System.out.print("Date of Birth (YYYY-MM-DD): ");
             String dob = scanner.nextLine();
+            dob = Validation.validateDate(dob, "Date of Birth");
 
             System.out.print("Email: ");
             String email = scanner.nextLine();
+            email = Validation.validateEmail(email);
 
             System.out.print("Product Type: ");
             String productType = scanner.nextLine();
+            productType = Validation.validateProductType(productType);
 
             System.out.print("Username: ");
             String username = scanner.nextLine();
+            username = Validation.validateUsername(username, contact);
 
             System.out.print("Password: ");
             String password = scanner.nextLine();
+            password = Validation.validatePassword(password);
 
             
             Customer customer = new Customer(id, name, address, contact, dob, email, productType, username, password);
