@@ -10,7 +10,6 @@ package com.ams.model;
  */
 public interface ITableName {
     
-    String getName();
-    void setName(String id );
+   public String getTableName();
     
 }

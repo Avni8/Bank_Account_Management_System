@@ -111,7 +111,7 @@ public class CreateAccount {
     }
     
     
-    public static void DisplayForAll(){
+    public static void displayForAll(){
         
         JDBCAccountRepository accountRepository = new JDBCAccountRepository();
         List<Account> accounts = accountRepository.getAllAccounts();

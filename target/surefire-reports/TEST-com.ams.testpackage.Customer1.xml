@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ams.testpackage.AccountTest" time="0.254" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ams.testpackage.Customer1" time="0.735" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -16,9 +16,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/avni/NetBeansProjects/Project_AMS/target/surefire/surefirebooter8380630978257468904.jar /home/avni/NetBeansProjects/Project_AMS/target/surefire 2023-06-28T15-26-16_490-jvmRun1 surefire8705913503222254779tmp surefire_015873626707411715620tmp"/>
+    <property name="sun.java.command" value="/home/avni/NetBeansProjects/Project_AMS/target/surefire/surefirebooter1703339881410771064.jar /home/avni/NetBeansProjects/Project_AMS/target/surefire 2023-06-28T15-20-10_000-jvmRun1 surefire3471365735430618612tmp surefire_01306230675267168544tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.ams.testpackage.AccountTest#testCreateAccount"/>
+    <property name="test" value="com.ams.testpackage.Customer1#testCreateCustomer"/>
     <property name="surefire.test.class.path" value="/home/avni/NetBeansProjects/Project_AMS/target/test-classes:/home/avni/NetBeansProjects/Project_AMS/target/classes:/home/avni/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/avni/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:/home/avni/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar:/home/avni/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/avni/.m2/repository/com/h2database/h2/1.4.200/h2-1.4.200.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/avni"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/avni/NetBeansProjects/Project_AMS/target/surefire/surefirebooter8380630978257468904.jar"/>
+    <property name="surefire.real.class.path" value="/home/avni/NetBeansProjects/Project_AMS/target/surefire/surefirebooter1703339881410771064.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.19+7-post-Ubuntu-0ubuntu122.04.1"/>
     <property name="user.name" value="avni"/>
@@ -59,34 +59,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testCreateAccount" classname="com.ams.testpackage.AccountTest" time="0.053">
-    <system-out><![CDATA[Account created successfully!
-]]></system-out>
-    <system-err><![CDATA[org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.PRIMARY_KEY_E ON PUBLIC.ACCOUNT(ACC_ID) VALUES 20"; SQL statement:
- INSERT INTO account (acc_id, acc_no, customerId, acc_type, interest_rate,opened_date, matured_date, balance)VALUES (?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:103)
-	at org.h2.mvstore.db.MVSecondaryIndex.checkUnique(MVSecondaryIndex.java:221)
-	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:196)
-	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:531)
-	at org.h2.command.dml.Insert.insertRows(Insert.java:195)
-	at org.h2.command.dml.Insert.update(Insert.java:151)
-	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
-	at org.h2.command.Command.executeUpdate(Command.java:251)
-	at org.h2.server.TcpServerThread.process(TcpServerThread.java:406)
-	at org.h2.server.TcpServerThread.run(TcpServerThread.java:183)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
-	at org.h2.engine.SessionRemote.done(SessionRemote.java:611)
-	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:237)
-	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
-	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
-	at com.ams.repository.H2AccountRepository.createAccount(H2AccountRepository.java:41)
-	at com.ams.testpackage.AccountTest.testCreateAccount(AccountTest.java:41)
+  <testcase name="testCreateCustomer" classname="com.ams.testpackage.Customer1" time="0.08">
+    <system-err><![CDATA[java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.ams.repository.JDBCCustomerRepository.createCustomer(JDBCCustomerRepository.java:38)
+	at com.ams.testpackage.Customer1.testCreateCustomer(Customer1.java:70)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

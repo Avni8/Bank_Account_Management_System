@@ -4,18 +4,20 @@
  */
 package com.ams.repository;
 
-import java.sql.*;
-import java.sql.SQLException;
 import com.ams.model.Customer;
-import java.util.*;
+import com.ams.repository.JDBCRepository;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author avni
  */
-public class JDBCCustomerRepository extends JDBCRepository<Customer>{
-    
-//    public class JDBCCustomerRepository extends JDBCRepository<Customer>
+public class H2CustomerRepository extends H2Repository {
     
     Connection connection = getConnection();
     
@@ -180,17 +182,5 @@ public class JDBCCustomerRepository extends JDBCRepository<Customer>{
         return customers;
                                
        }    
-   }
-   
-
-
     
-    
-    
-    
-    
-    
-
-
-
-
+}

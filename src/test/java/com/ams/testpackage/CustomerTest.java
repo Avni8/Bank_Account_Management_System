@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ams.testpackage;
-import com.ams.repository.JDBCCustomerRepository;
+import com.ams.repository.H2CustomerRepository;
+import com.ams.repository.JDBCRepository;
+import com.ams.repository.H2Repository;
 import com.ams.model.Customer;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,9 +16,9 @@ import java.util.*;
  *
  * @author avni
  */
-public class CustomerTest {
+public class CustomerTest  extends H2Repository{
     
-    private static JDBCCustomerRepository customerRepository;
+    private static H2CustomerRepository customerRepository;
     private static Customer testCustomer;
     private static Customer testCustomer1;
     
@@ -25,10 +27,12 @@ public class CustomerTest {
     @BeforeClass
     public static void setUp(){
         
-        customerRepository = new JDBCCustomerRepository();
-        testCustomer = new Customer("25", "Rishi", "ktm", "9834675382", "1995-02-02",
+        
+        
+        customerRepository = new H2CustomerRepository();
+        testCustomer = new Customer("10", "Ram", "ktm", "9834675382", "1995-02-02",
                 "ria@gmail.com", "Savings", "9834675382", "rishi");
-        testCustomer1 = new Customer("26", "Annie", "ktm", "9834675382", "1995-02-02",
+        testCustomer1 = new Customer("11", "Hari", "ktm", "9834675382", "1995-02-02",
                 "annie@gmail.com", "Savings", "9834675382", "ann");
     }
     
@@ -81,7 +85,7 @@ public class CustomerTest {
     public void testGetAllCustomers(){  
         List<Customer> customers = customerRepository.getAllCustomers();
         assertNotNull(customers);
-        assertEquals(20, customers.size());
+        assertEquals(5, customers.size());
         
     }
     
@@ -121,6 +125,8 @@ public class CustomerTest {
         assertNull(deletedCustomer);
         
         
-    }
+    }    
+    
+    
     
 }

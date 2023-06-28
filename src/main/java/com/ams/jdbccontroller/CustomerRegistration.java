@@ -12,6 +12,8 @@ import com.ams.repository.JDBCCustomerRepository;
  */
 public class CustomerRegistration {
     
+    
+    
     public static void registerCustomer() {
         
         Scanner scanner = new Scanner(System.in);
@@ -97,7 +99,7 @@ public class CustomerRegistration {
         
     } 
     
-    public static void DisplayForAll(){
+    public static void displayForAll(){
         
         JDBCCustomerRepository customerRepository = new JDBCCustomerRepository();
         List<Customer> customers = customerRepository.getAllCustomers();

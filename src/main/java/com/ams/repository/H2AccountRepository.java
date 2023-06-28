@@ -3,20 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ams.repository;
-import java.sql.*;
-import java.sql.SQLException;
-import java.util.*;
-import com.ams.model.Customer;
+
 import com.ams.model.Account;
+import com.ams.repository.JDBCRepository;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author avni
  */
-public class JDBCAccountRepository extends JDBCRepository<Account> {
+public class H2AccountRepository extends H2Repository{
     
-    
-//    public class JDBCAccountRepository extends JDBCRepository<Account>
     Connection connection = getConnection();
     
     public void createAccount(Account account){
@@ -182,6 +184,5 @@ public List<Account> getAllAccounts(){
         return accounts;
                                
        }    
-   }
-
-
+    
+}

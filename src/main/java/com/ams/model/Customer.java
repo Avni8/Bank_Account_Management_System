@@ -71,6 +71,9 @@ public class Customer implements IModelId, ITableName {
     public String getPassword() {
         return password;
     }
+     public String getTableName(){
+        return "customer";
+    }
 
     @Override
     public void setId(String id) {
@@ -108,6 +111,8 @@ public class Customer implements IModelId, ITableName {
     public void setPassword(String password) {
         this.password = password;
     }
+   
+    
     
 }
 

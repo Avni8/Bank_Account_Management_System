@@ -62,7 +62,7 @@ public class AdminDashboard {
 
                     System.out.println("\nWelcome to the All Customer Details Page!\n");
 
-                    CustomerRegistration.DisplayForAll();
+                    CustomerRegistration.displayForAll();
 
                     break;
 
@@ -102,7 +102,7 @@ public class AdminDashboard {
 
                     System.out.println("\nWelcome to the All Account Details Page!\n");
 
-                    CreateAccount.DisplayForAll();
+                    CreateAccount.displayForAll();
 
                     break;
 

@@ -3,33 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ams.testpackage;
-
-import com.ams.repository.JDBCAccountRepository;
+import com.ams.repository.H2AccountRepository;
+import com.ams.repository.H2Repository;
 import com.ams.model.Account;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import java.util.*;
-
 /**
  *
  * @author avni
  */
-public class AccountTest {
+public class AccountTest extends H2Repository {
     
-    private static JDBCAccountRepository accountRepository;
+    private static H2AccountRepository accountRepository;
     private static Account testAccount;
     private static Account testAccount1;
     
     @BeforeClass
     public static void setUp(){
         
-        accountRepository = new JDBCAccountRepository();
+        accountRepository = new H2AccountRepository();
         
-        testAccount = new Account("8", "2400000123456789", "26", "Nari Bachat Saving", 13, 
+        testAccount = new Account("10", "2400000123456789", "27", "Nari Bachat Saving", 13, 
                 "1999-02-02", "2020-02-02", 3434433, null);
         
-        testAccount1 = new Account("9", "2400000123454592", "21", "Nari Bachat Saving", 13, 
+        testAccount1 = new Account("11", "2400000123454592", "28", "Nari Bachat Saving", 13, 
                 "1999-02-02", "2020-02-02", 10000000, null);
         
     }
@@ -76,7 +76,7 @@ public class AccountTest {
         
         List<Account> accounts = accountRepository.getAllAccounts();
         assertNotNull(accounts);
-        assertEquals(10, accounts.size());  
+        assertEquals(3, accounts.size());  
     }
     
     @Test
@@ -108,6 +108,10 @@ public class AccountTest {
         accountRepository.deleteAccountByCustomerId(testAccount.getCustomerId());
         Account deletedAccount = accountRepository.readAccountByCustomerId(testAccount.getCustomerId());
         assertNull(deletedAccount);
-        
-    }  
+    }
+    
+    
+  
+    
+    
 }

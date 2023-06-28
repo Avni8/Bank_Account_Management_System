@@ -9,7 +9,7 @@ package com.ams.model;
  *
  * @author avni
  */
-public class Account implements IModelId {
+public class Account implements IModelId, ITableName {
     
     private String acc_id;
     private String acc_no;
@@ -56,6 +56,9 @@ public class Account implements IModelId {
 
     public String getAcc_type() {
         return acc_type;
+    }
+    public String getTableName(){
+        return "account";
     }
 
     public void setAcc_type(String acc_type) {
@@ -111,6 +114,8 @@ public class Account implements IModelId {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+    
+    
 }
 
     
